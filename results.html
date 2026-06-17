@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ARVAMOS FC 試合結果一覧。全試合の結果をご覧いただけます。">
+  <title>RESULTS | ARVAMOS FC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="results">
+
+  <div id="site-header"></div>
+
+  <div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1920&q=70')">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <div class="container">
+        <h1 class="page-hero__title">RESULTS</h1>
+        <p class="page-hero__breadcrumb"><a href="index.html">HOME</a> / RESULTS</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="sec" id="results-page">
+      <div class="container">
+        <!-- Season summary -->
+        <div class="result-summary" id="result-summary-page" data-animate></div>
+        <!-- Filter -->
+        <div class="stabs" id="result-tabs" data-animate>
+          <button class="stab is-active" data-rf="all">ALL</button>
+          <button class="stab" data-rf="W">WIN</button>
+          <button class="stab" data-rf="D">DRAW</button>
+          <button class="stab" data-rf="L">LOSS</button>
+        </div>
+        <!-- Results list -->
+        <div class="rlist" id="results-list-page"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <button class="totop" id="totop" aria-label="トップへ戻る">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+  <nav class="mob-nav" id="mob-nav" aria-label="モバイルナビ"></nav>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

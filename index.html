@@ -8,58 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=85">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="index">
 
-  <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <a href="#top" class="logo">
-        <svg class="logo__emblem" viewBox="0 0 56 56" width="44" height="44" aria-hidden="true">
-          <polygon points="28,3 52,16 52,40 28,53 4,40 4,16" fill="#CC0000"/>
-          <text x="28" y="36" text-anchor="middle" fill="#fff" font-family="Oswald,sans-serif" font-size="21" font-weight="700">A</text>
-        </svg>
-        <div class="logo__text">
-          <span class="logo__name">ARVAMOS FC</span>
-          <span class="logo__sub">THE WILL TO WIN</span>
-        </div>
-      </a>
-
-      <nav class="nav" id="nav" aria-label="メインメニュー">
-        <ul class="nav__list">
-          <li><a href="#news"     class="nav__link">NEWS</a></li>
-          <li><a href="#about"    class="nav__link">CLUB</a></li>
-          <li><a href="#schedule" class="nav__link">SCHEDULE</a></li>
-          <li><a href="#players"  class="nav__link">PLAYERS</a></li>
-          <li><a href="#gallery"  class="nav__link">GALLERY</a></li>
-          <li><a href="#sponsors" class="nav__link">SPONSORS</a></li>
-          <li><a href="#contact"  class="nav__link nav__link--cta">CONTACT</a></li>
-        </ul>
-      </nav>
-
-      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="top">
-    <div class="hero__img-wrap">
-      <img class="hero__img" src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=85" alt="" role="presentation" loading="eager">
-    </div>
+    <div class="hero__media" id="hero-media"></div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__content">
-      <p  class="hero__season  js-hi">SEASON 2024</p>
-      <h1 class="hero__title   js-hi">
-        <span class="hero__title-main">ARVAMOS</span>
-        <em   class="hero__title-fc">FC</em>
-      </h1>
-      <p  class="hero__ja      js-hi">アルヴァモス FC</p>
-      <div class="hero__rule   js-hi" aria-hidden="true"></div>
-      <p  class="hero__tagline js-hi">THE WILL TO WIN</p>
+      <p  class="hero__season  js-hi" id="hero-season"></p>
+      <h1 class="hero__title   js-hi" id="hero-title"></h1>
+      <p  class="hero__ja      js-hi" id="hero-ja"></p>
+      <div class="hero__rule   js-hi" id="hero-rule" aria-hidden="true"></div>
+      <p  class="hero__tagline js-hi" id="hero-tagline"></p>
       <div class="hero__btns   js-hi">
         <a href="#news"     class="btn btn--red">LATEST NEWS</a>
         <a href="#schedule" class="btn btn--ghost">SCHEDULE</a>
@@ -72,46 +36,10 @@
   </section>
 
   <!-- ===== NEXT MATCH BANNER ===== -->
-  <div class="nmb">
-    <div class="nmb__label">NEXT MATCH</div>
-    <div class="nmb__game">
-      <span class="nmb__team nmb__team--h">ARVAMOS FC</span>
-      <div class="nmb__center">
-        <span class="nmb__vs">VS</span>
-        <span class="nmb__info">2024.06.22 SAT &nbsp;14:00 KO</span>
-      </div>
-      <span class="nmb__team nmb__team--a">EAST UNITED FC</span>
-    </div>
-    <div class="nmb__cd" id="countdown">
-      <div class="cd-unit"><b id="cd-d">00</b><small>DAYS</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><b id="cd-h">00</b><small>HRS</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><b id="cd-m">00</b><small>MIN</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><b id="cd-s">00</b><small>SEC</small></div>
-    </div>
-    <a href="#" class="nmb__ticket">TICKET <span>→</span></a>
-  </div>
+  <div class="nmb" id="nmb"></div>
 
   <!-- ===== TICKER ===== -->
-  <div class="ticker" aria-label="最新情報">
-    <span class="ticker__badge">NEWS</span>
-    <div class="ticker__wrap">
-      <div class="ticker__inner">
-        <span>06.15&nbsp; ホームゲーム vs FC RIVALS — 3-1 勝利！首位浮上</span>
-        <span>06.10&nbsp; MF 田中 雄一 選手 加入のお知らせ</span>
-        <span>06.08&nbsp; 2024サマーキャンプ参加者募集開始</span>
-        <span>06.01&nbsp; 新スポンサー契約締結のお知らせ</span>
-        <span>05.28&nbsp; アウェー vs NORTH UNITED — 2-2 引き分け</span>
-        <span>06.15&nbsp; ホームゲーム vs FC RIVALS — 3-1 勝利！首位浮上</span>
-        <span>06.10&nbsp; MF 田中 雄一 選手 加入のお知らせ</span>
-        <span>06.08&nbsp; 2024サマーキャンプ参加者募集開始</span>
-        <span>06.01&nbsp; 新スポンサー契約締結のお知らせ</span>
-        <span>05.28&nbsp; アウェー vs NORTH UNITED — 2-2 引き分け</span>
-      </div>
-    </div>
-  </div>
+  <div class="ticker" id="ticker" aria-label="最新情報"></div>
 
   <main>
 
@@ -119,102 +47,21 @@
     <section class="sec news-sec" id="news">
       <div class="container">
         <div class="sec-head">
-          <div>
-            <span class="sec-label">LATEST</span>
-            <h2 class="sec-title">NEWS</h2>
-          </div>
+          <div><span class="sec-label">LATEST</span><h2 class="sec-title">NEWS</h2></div>
           <a href="#" class="sec-more">VIEW ALL <span>→</span></a>
         </div>
       </div>
       <div class="news-rail-wrap">
-        <div class="news-rail" id="news-rail">
-
-          <article class="nc">
-            <a href="#" class="nc__inner">
-              <div class="nc__img-box">
-                <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=720&q=80" alt="試合レポート" loading="lazy">
-                <span class="nc__cat nc__cat--report">MATCH REPORT</span>
-              </div>
-              <div class="nc__body">
-                <time class="nc__date">2024.06.15</time>
-                <h3 class="nc__title">第8節 vs FC RIVALS 3-1勝利！チーム首位浮上</h3>
-                <p class="nc__text">圧倒的なホームの雰囲気の中、前半から主導権を握り快勝。首位に躍り出た。</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="nc">
-            <a href="#" class="nc__inner">
-              <div class="nc__img-box">
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=720&q=80" alt="移籍情報" loading="lazy">
-                <span class="nc__cat nc__cat--transfer">TRANSFER</span>
-              </div>
-              <div class="nc__body">
-                <time class="nc__date">2024.06.10</time>
-                <h3 class="nc__title">MF 田中 雄一 選手 加入のお知らせ</h3>
-                <p class="nc__text">攻撃的MFとして活躍してきた田中 雄一選手の加入が決定。即戦力として期待。</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="nc">
-            <a href="#" class="nc__inner">
-              <div class="nc__img-box">
-                <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=720&q=80" alt="トレーニング" loading="lazy">
-                <span class="nc__cat nc__cat--info">TRAINING</span>
-              </div>
-              <div class="nc__body">
-                <time class="nc__date">2024.06.08</time>
-                <h3 class="nc__title">2024サマーキャンプ 参加者募集スタート</h3>
-                <p class="nc__text">プロ選手と共に汗を流すサマーキャンプを今夏も開催。小中高生対象・定員先着順。</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="nc">
-            <a href="#" class="nc__inner">
-              <div class="nc__img-box">
-                <img src="https://images.unsplash.com/photo-1546964124-0cce460e2c45?w=720&q=80" alt="クラブ情報" loading="lazy">
-                <span class="nc__cat nc__cat--info">CLUB</span>
-              </div>
-              <div class="nc__body">
-                <time class="nc__date">2024.06.01</time>
-                <h3 class="nc__title">新規スポンサー契約締結のお知らせ</h3>
-                <p class="nc__text">地域を代表する企業様との新たなパートナーシップを締結しました。</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="nc">
-            <a href="#" class="nc__inner">
-              <div class="nc__img-box">
-                <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=720&q=80" alt="試合結果" loading="lazy">
-                <span class="nc__cat nc__cat--report">MATCH REPORT</span>
-              </div>
-              <div class="nc__body">
-                <time class="nc__date">2024.05.28</time>
-                <h3 class="nc__title">第7節 vs NORTH UNITED 2-2引き分け</h3>
-                <p class="nc__text">アウェーで2点差を追いつく粘り強い戦いを見せた。後半の逆転に期待が集まる。</p>
-              </div>
-            </a>
-          </article>
-
-        </div>
-        <div class="news-dots" id="news-dots" aria-hidden="true">
-          <button class="news-dot is-active" data-i="0"></button>
-          <button class="news-dot" data-i="1"></button>
-          <button class="news-dot" data-i="2"></button>
-          <button class="news-dot" data-i="3"></button>
-          <button class="news-dot" data-i="4"></button>
-        </div>
+        <div class="news-rail" id="news-rail"></div>
+        <div class="news-dots" id="news-dots" aria-hidden="true"></div>
       </div>
     </section>
 
     <!-- ===== ABOUT ===== -->
     <section class="about-sec" id="about">
       <div class="about-sec__img" data-animate>
-        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1000&q=80" alt="クラブ練習風景" loading="lazy">
-        <div class="about-sec__img-overlay" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1000&q=80" alt="クラブ練習" loading="lazy">
+        <div class="about-sec__img-overlay"></div>
       </div>
       <div class="about-sec__body">
         <div data-animate>
@@ -223,124 +70,47 @@
           <div class="sec-rule"></div>
         </div>
         <p class="about-lead" data-animate>勝利への意志、<br>地域への誇り。</p>
-        <p class="about-text" data-animate>
-          ARVAMOS FCは2018年に創設。情熱とチームワークを信条に、地域に根ざしながら常にトップを目指す選手たちが揃っています。ピッチの上での勝利だけでなく、地域社会への貢献と次世代の育成を使命としています。
-        </p>
+        <p class="about-text" data-animate id="about-text"></p>
         <div class="about-stats" data-animate>
-          <div class="about-stat">
-            <b class="about-stat__n js-count" data-to="2018">0</b>
-            <span class="about-stat__l">FOUNDED</span>
-          </div>
-          <div class="about-stat">
-            <b class="about-stat__n js-count" data-to="25">0</b>
-            <span class="about-stat__l">PLAYERS</span>
-          </div>
-          <div class="about-stat">
-            <b class="about-stat__n js-count" data-to="3">0</b>
-            <span class="about-stat__l">TITLES</span>
-          </div>
-          <div class="about-stat">
-            <b class="about-stat__n js-count" data-to="6000">0</b>
-            <span class="about-stat__l">FANS</span>
-          </div>
+          <div class="about-stat"><b class="about-stat__n js-count" data-to="2018">0</b><span class="about-stat__l">FOUNDED</span></div>
+          <div class="about-stat"><b class="about-stat__n js-count" data-to="25">0</b><span class="about-stat__l">PLAYERS</span></div>
+          <div class="about-stat"><b class="about-stat__n js-count" data-to="3">0</b><span class="about-stat__l">TITLES</span></div>
+          <div class="about-stat"><b class="about-stat__n js-count" data-to="6000">0</b><span class="about-stat__l">FANS</span></div>
         </div>
-        <a href="#" class="btn btn--red" data-animate>CLUB HISTORY</a>
+        <a href="staff.html" class="btn btn--red" data-animate>CLUB HISTORY</a>
       </div>
     </section>
 
-    <!-- ===== SCHEDULE ===== -->
+    <!-- ===== SCHEDULE / RESULTS ===== -->
     <section class="sec schedule-sec" id="schedule">
       <div class="schedule-sec__bg" aria-hidden="true"></div>
       <div class="container">
         <div class="sec-head">
           <div>
-            <span class="sec-label">UPCOMING</span>
-            <h2 class="sec-title">SCHEDULE</h2>
+            <span class="sec-label" id="sch-label">UPCOMING</span>
+            <h2 class="sec-title" id="sch-title">SCHEDULE</h2>
           </div>
-          <a href="#" class="sec-more">FULL SCHEDULE <span>→</span></a>
+          <div class="view-tabs">
+            <button class="vtab vtab--active" data-view="schedule">日程</button>
+            <button class="vtab" data-view="results">結果</button>
+          </div>
         </div>
-        <div class="stabs" data-animate>
-          <button class="stab is-active" data-f="all">ALL</button>
-          <button class="stab" data-f="home">HOME</button>
-          <button class="stab" data-f="away">AWAY</button>
+        <!-- Schedule pane -->
+        <div id="pane-schedule">
+          <div class="stabs" data-animate>
+            <button class="stab is-active" data-f="all">ALL</button>
+            <button class="stab" data-f="home">HOME</button>
+            <button class="stab" data-f="away">AWAY</button>
+          </div>
+          <div class="mlist" id="schedule-list"></div>
         </div>
-        <div class="mlist">
-
-          <div class="mrow" data-type="home" data-animate>
-            <div class="mrow__date"><b>22</b><span>JUN</span></div>
-            <div class="mrow__meta">
-              <span class="mbadge mbadge--h">HOME</span>
-              <span class="mcomp">リーグ第9節 &nbsp;14:00 KO</span>
-            </div>
-            <div class="mrow__teams">
-              <span class="mteam mteam--h">ARVAMOS FC</span>
-              <span class="mvs">VS</span>
-              <span class="mteam">EAST UNITED FC</span>
-            </div>
-            <span class="mvenue">田園スタジアム</span>
-            <a href="#" class="btn btn--red btn--sm">TICKET</a>
+        <!-- Results pane -->
+        <div id="pane-results" hidden>
+          <div class="result-summary" id="result-summary"></div>
+          <div class="rlist" id="results-list-idx"></div>
+          <div class="sec__cta-btn">
+            <a href="results.html" class="btn btn--ghost">ALL RESULTS →</a>
           </div>
-
-          <div class="mrow" data-type="away" data-animate>
-            <div class="mrow__date"><b>29</b><span>JUN</span></div>
-            <div class="mrow__meta">
-              <span class="mbadge mbadge--a">AWAY</span>
-              <span class="mcomp">リーグ第10節 &nbsp;13:00 KO</span>
-            </div>
-            <div class="mrow__teams">
-              <span class="mteam">FC SOUTH</span>
-              <span class="mvs">VS</span>
-              <span class="mteam mteam--h">ARVAMOS FC</span>
-            </div>
-            <span class="mvenue">南市民競技場</span>
-            <a href="#" class="btn btn--ghost btn--sm">DETAIL</a>
-          </div>
-
-          <div class="mrow" data-type="home" data-animate>
-            <div class="mrow__date"><b>06</b><span>JUL</span></div>
-            <div class="mrow__meta">
-              <span class="mbadge mbadge--h">HOME</span>
-              <span class="mcomp">カップ戦 準決勝 &nbsp;18:00 KO</span>
-            </div>
-            <div class="mrow__teams">
-              <span class="mteam mteam--h">ARVAMOS FC</span>
-              <span class="mvs">VS</span>
-              <span class="mteam">WEST CITY FC</span>
-            </div>
-            <span class="mvenue">田園スタジアム</span>
-            <a href="#" class="btn btn--red btn--sm">TICKET</a>
-          </div>
-
-          <div class="mrow" data-type="away" data-animate>
-            <div class="mrow__date"><b>13</b><span>JUL</span></div>
-            <div class="mrow__meta">
-              <span class="mbadge mbadge--a">AWAY</span>
-              <span class="mcomp">リーグ第11節 &nbsp;15:00 KO</span>
-            </div>
-            <div class="mrow__teams">
-              <span class="mteam">NORTH FC</span>
-              <span class="mvs">VS</span>
-              <span class="mteam mteam--h">ARVAMOS FC</span>
-            </div>
-            <span class="mvenue">北市総合運動場</span>
-            <a href="#" class="btn btn--ghost btn--sm">DETAIL</a>
-          </div>
-
-          <div class="mrow" data-type="home" data-animate>
-            <div class="mrow__date"><b>20</b><span>JUL</span></div>
-            <div class="mrow__meta">
-              <span class="mbadge mbadge--h">HOME</span>
-              <span class="mcomp">リーグ第12節 &nbsp;16:00 KO</span>
-            </div>
-            <div class="mrow__teams">
-              <span class="mteam mteam--h">ARVAMOS FC</span>
-              <span class="mvs">VS</span>
-              <span class="mteam">CENTRAL SC</span>
-            </div>
-            <span class="mvenue">田園スタジアム</span>
-            <a href="#" class="btn btn--red btn--sm">TICKET</a>
-          </div>
-
         </div>
       </div>
     </section>
@@ -349,106 +119,11 @@
     <section class="sec players-sec" id="players">
       <div class="container">
         <div class="sec-head">
-          <div>
-            <span class="sec-label">ROSTER</span>
-            <h2 class="sec-title">PLAYERS</h2>
-          </div>
-          <a href="#" class="sec-more">ALL PLAYERS <span>→</span></a>
+          <div><span class="sec-label">ROSTER</span><h2 class="sec-title">PLAYERS</h2></div>
+          <a href="players.html" class="sec-more">ALL PLAYERS <span>→</span></a>
         </div>
       </div>
-      <div class="pgrid">
-
-        <div class="pc" data-animate>
-          <div class="pc__img-wrap">
-            <img class="pc__img" src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=480&q=80" alt="山田 大輝" loading="lazy">
-          </div>
-          <div class="pc__top">
-            <span class="pc__pos">GK</span>
-            <span class="pc__num">1</span>
-          </div>
-          <div class="pc__info">
-            <p class="pc__ja">山田 大輝</p>
-            <p class="pc__en">DAIKI YAMADA</p>
-            <p class="pc__role">GOALKEEPER</p>
-          </div>
-        </div>
-
-        <div class="pc" data-animate>
-          <div class="pc__img-wrap">
-            <img class="pc__img" src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=480&q=80" alt="鈴木 健太" loading="lazy">
-          </div>
-          <div class="pc__top">
-            <span class="pc__pos">DF</span>
-            <span class="pc__num">5</span>
-          </div>
-          <div class="pc__info">
-            <p class="pc__ja">鈴木 健太</p>
-            <p class="pc__en">KENTA SUZUKI</p>
-            <p class="pc__role">DEFENDER</p>
-          </div>
-        </div>
-
-        <div class="pc" data-animate>
-          <div class="pc__img-wrap">
-            <img class="pc__img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=480&q=80" alt="田中 雄一" loading="lazy">
-          </div>
-          <div class="pc__top">
-            <span class="pc__pos">MF</span>
-            <span class="pc__num">8</span>
-          </div>
-          <div class="pc__info">
-            <p class="pc__ja">田中 雄一</p>
-            <p class="pc__en">YUICHI TANAKA</p>
-            <p class="pc__role">MIDFIELDER</p>
-          </div>
-        </div>
-
-        <div class="pc" data-animate>
-          <div class="pc__img-wrap">
-            <img class="pc__img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=480&q=80" alt="佐藤 翔" loading="lazy">
-          </div>
-          <div class="pc__top">
-            <span class="pc__pos">FW</span>
-            <span class="pc__num">9</span>
-          </div>
-          <div class="pc__info">
-            <p class="pc__ja">佐藤 翔</p>
-            <p class="pc__en">SHO SATO</p>
-            <p class="pc__role">FORWARD</p>
-          </div>
-        </div>
-
-        <div class="pc" data-animate>
-          <div class="pc__img-wrap">
-            <img class="pc__img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=480&q=80" alt="中村 颯太" loading="lazy">
-          </div>
-          <div class="pc__top">
-            <span class="pc__pos">MF</span>
-            <span class="pc__num">10</span>
-          </div>
-          <div class="pc__info">
-            <p class="pc__ja">中村 颯太</p>
-            <p class="pc__en">SOTA NAKAMURA</p>
-            <p class="pc__role">MIDFIELDER</p>
-          </div>
-        </div>
-
-        <div class="pc" data-animate>
-          <div class="pc__img-wrap">
-            <img class="pc__img" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=480&q=80" alt="伊藤 快斗" loading="lazy">
-          </div>
-          <div class="pc__top">
-            <span class="pc__pos">FW</span>
-            <span class="pc__num">11</span>
-          </div>
-          <div class="pc__info">
-            <p class="pc__ja">伊藤 快斗</p>
-            <p class="pc__en">KAITO ITO</p>
-            <p class="pc__role">FORWARD</p>
-          </div>
-        </div>
-
-      </div>
+      <div class="pgrid" id="players-grid"></div>
     </section>
 
     <!-- ===== JOIN BANNER ===== -->
@@ -457,7 +132,7 @@
       <div class="join__content">
         <h2 class="join__title">JOIN US</h2>
         <p class="join__text">一緒に戦うサポーターを募集しています。<br>クラブメンバー登録で試合情報をいち早くお届け。</p>
-        <a href="#" class="btn btn--white">BECOME A MEMBER</a>
+        <a href="contact.html" class="btn btn--white">BECOME A MEMBER</a>
       </div>
     </div>
 
@@ -465,34 +140,26 @@
     <section class="sec gallery-sec" id="gallery">
       <div class="container">
         <div class="sec-head">
-          <div>
-            <span class="sec-label">PHOTOS</span>
-            <h2 class="sec-title">GALLERY</h2>
-          </div>
+          <div><span class="sec-label">PHOTOS</span><h2 class="sec-title">GALLERY</h2></div>
           <a href="#" class="sec-more">ALL PHOTOS <span>→</span></a>
         </div>
       </div>
       <div class="bgrid" data-animate>
-        <div class="gi gi-1" data-src="https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=1200&q=80">
-          <img src="https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=1200&q=80" alt="スタジアム" loading="lazy">
-          <div class="gi__ov"><span>STADIUM</span></div>
+        <div class="gi gi-1" data-src="https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=1200&q=80"><img src="https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=1200&q=80" alt="スタジアム" loading="lazy"><div class="gi__ov"><span>STADIUM</span></div></div>
+        <div class="gi gi-2" data-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=700&q=80"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=700&q=80" alt="試合" loading="lazy"><div class="gi__ov"><span>MATCH</span></div></div>
+        <div class="gi gi-3" data-src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=700&q=80"><img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=700&q=80" alt="練習" loading="lazy"><div class="gi__ov"><span>TRAINING</span></div></div>
+        <div class="gi gi-4" data-src="https://images.unsplash.com/photo-1527628217451-b813a8575c7e?w=700&q=80"><img src="https://images.unsplash.com/photo-1527628217451-b813a8575c7e?w=700&q=80" alt="プレー" loading="lazy"><div class="gi__ov"><span>ACTION</span></div></div>
+        <div class="gi gi-5" data-src="https://images.unsplash.com/photo-1484482340112-e1e2682b4856?w=700&q=80"><img src="https://images.unsplash.com/photo-1484482340112-e1e2682b4856?w=700&q=80" alt="ファン" loading="lazy"><div class="gi__ov"><span>FANS</span></div></div>
+      </div>
+    </section>
+
+    <!-- ===== MATCH PLANNER ===== -->
+    <section class="sec planner-sec" id="planner">
+      <div class="container">
+        <div class="sec-head" data-animate>
+          <div><span class="sec-label">PLANNING</span><h2 class="sec-title">MATCH PLANNER</h2></div>
         </div>
-        <div class="gi gi-2" data-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=700&q=80">
-          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=700&q=80" alt="試合" loading="lazy">
-          <div class="gi__ov"><span>MATCH</span></div>
-        </div>
-        <div class="gi gi-3" data-src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=700&q=80">
-          <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=700&q=80" alt="トレーニング" loading="lazy">
-          <div class="gi__ov"><span>TRAINING</span></div>
-        </div>
-        <div class="gi gi-4" data-src="https://images.unsplash.com/photo-1527628217451-b813a8575c7e?w=700&q=80">
-          <img src="https://images.unsplash.com/photo-1527628217451-b813a8575c7e?w=700&q=80" alt="プレー" loading="lazy">
-          <div class="gi__ov"><span>ACTION</span></div>
-        </div>
-        <div class="gi gi-5" data-src="https://images.unsplash.com/photo-1484482340112-e1e2682b4856?w=700&q=80">
-          <img src="https://images.unsplash.com/photo-1484482340112-e1e2682b4856?w=700&q=80" alt="ファン" loading="lazy">
-          <div class="gi__ov"><span>FANS</span></div>
-        </div>
+        <div class="planner-wrap" id="planner-wrap" data-animate></div>
       </div>
     </section>
 
@@ -500,135 +167,34 @@
     <section class="sec sponsors-sec" id="sponsors">
       <div class="container">
         <div class="sec-head" data-animate>
-          <div>
-            <span class="sec-label">PARTNERS</span>
-            <h2 class="sec-title">SPONSORS</h2>
-          </div>
+          <div><span class="sec-label">PARTNERS</span><h2 class="sec-title">SPONSORS</h2></div>
+          <a href="contact.html" class="sec-more">BECOME A PARTNER <span>→</span></a>
         </div>
-        <div class="sp-tier" data-animate>
-          <h3 class="sp-tier__lbl">GOLD PARTNER</h3>
-          <div class="sp-row sp-row--gold">
-            <div class="spi"><span>SPONSOR A</span></div>
-            <div class="spi"><span>SPONSOR B</span></div>
-          </div>
-        </div>
-        <div class="sp-tier" data-animate>
-          <h3 class="sp-tier__lbl">SILVER PARTNER</h3>
-          <div class="sp-row sp-row--silver">
-            <div class="spi"><span>SPONSOR C</span></div>
-            <div class="spi"><span>SPONSOR D</span></div>
-            <div class="spi"><span>SPONSOR E</span></div>
-          </div>
-        </div>
-        <div class="sp-tier" data-animate>
-          <h3 class="sp-tier__lbl">OFFICIAL PARTNER</h3>
-          <div class="sp-row sp-row--official">
-            <div class="spi"><span>SPONSOR F</span></div>
-            <div class="spi"><span>SPONSOR G</span></div>
-            <div class="spi"><span>SPONSOR H</span></div>
-            <div class="spi"><span>SPONSOR I</span></div>
-          </div>
-        </div>
+        <div id="sponsors-content"></div>
         <div class="sp-cta" data-animate>
           <p>スポンサー・パートナーシップに関するお問い合わせ</p>
-          <a href="#contact" class="btn btn--red">SPONSOR INQUIRY</a>
+          <a href="contact.html" class="btn btn--red">SPONSOR INQUIRY</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="contact">
-    <div class="footer__top">
-      <div class="container">
-        <div class="fg">
-          <div class="fg__brand">
-            <a href="#top" class="logo">
-              <svg class="logo__emblem" viewBox="0 0 56 56" width="52" height="52" aria-hidden="true">
-                <polygon points="28,3 52,16 52,40 28,53 4,40 4,16" fill="#CC0000"/>
-                <text x="28" y="36" text-anchor="middle" fill="#fff" font-family="Oswald,sans-serif" font-size="21" font-weight="700">A</text>
-              </svg>
-              <div class="logo__text">
-                <span class="logo__name">ARVAMOS FC</span>
-                <span class="logo__sub">THE WILL TO WIN</span>
-              </div>
-            </a>
-            <p class="fg__desc">勝利への意志、地域への誇り。<br>ARVAMOS FCは2018年創設のサッカークラブです。地域に根ざした熱いフットボールをお届けします。</p>
-            <div class="fg__sns">
-              <a href="#" class="sns" aria-label="X">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.735-8.849L1.254 2.25H8.08l4.259 5.632 5.905-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href="#" class="sns" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </a>
-              <a href="#" class="sns" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </a>
-              <a href="#" class="sns" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </a>
-            </div>
-          </div>
+  <div id="site-footer"></div>
 
-          <div class="fg__col">
-            <h4 class="fg__ttl">CLUB</h4>
-            <ul>
-              <li><a href="#about">クラブ概要</a></li>
-              <li><a href="#">クラブ理念</a></li>
-              <li><a href="#">歴史</a></li>
-              <li><a href="#">スタッフ</a></li>
-              <li><a href="#">アカデミー</a></li>
-            </ul>
-          </div>
-
-          <div class="fg__col">
-            <h4 class="fg__ttl">MATCH</h4>
-            <ul>
-              <li><a href="#schedule">試合日程</a></li>
-              <li><a href="#">試合結果</a></li>
-              <li><a href="#">チケット</a></li>
-              <li><a href="#">スタジアム情報</a></li>
-            </ul>
-          </div>
-
-          <div class="fg__col">
-            <h4 class="fg__ttl">CONTACT</h4>
-            <address class="fg__addr">
-              <p>〒000-0000<br>○○県○○市○○町 1-2-3</p>
-              <p><a href="tel:000-0000-0000">000-0000-0000</a></p>
-              <p><a href="mailto:info@arvamosfc.jp">info@arvamosfc.jp</a></p>
-            </address>
-            <a href="mailto:info@arvamosfc.jp" class="btn btn--ghost btn--sm" style="margin-top:16px">SEND EMAIL</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="container footer__bottom-in">
-        <p>&copy; 2024 ARVAMOS FC. All Rights Reserved.</p>
-        <div class="footer__legal">
-          <a href="#">プライバシーポリシー</a>
-          <a href="#">サイトマップ</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- BACK TO TOP -->
   <button class="totop" id="totop" aria-label="トップへ戻る">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <!-- LIGHTBOX -->
   <div class="lb" id="lb" role="dialog" aria-modal="true" hidden>
     <button class="lb__close" id="lb-close" aria-label="閉じる">&#10005;</button>
     <div class="lb__bg" id="lb-bg"></div>
     <img class="lb__img" id="lb-img" src="" alt="">
   </div>
 
+  <nav class="mob-nav" id="mob-nav" aria-label="モバイルナビ"></nav>
+
+  <script src="config.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
