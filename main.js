@@ -197,44 +197,75 @@ function setupCounters() {
   document.querySelectorAll('.js-count').forEach(el => obs.observe(el));
 }
 
-/* ── 8. Hero (index only) ────────────────────────────────── */
+/* ── 8. Hero — Poster Design ─────────────────────────────── */
 function buildHero() {
-  const media = document.getElementById('hero-media');
-  if (!media) return;
+  // Season label
+  const seasonEl = document.getElementById('hero-season');
+  if (seasonEl) seasonEl.textContent = `SEASON ${CLUB.season}`;
 
-  if (CLUB.hero.type === 'video' && CLUB.hero.video) {
-    media.innerHTML = `<video class="hero__video" autoplay muted loop playsinline poster="${CLUB.hero.poster}"><source src="${CLUB.hero.video}" type="video/mp4"></video>`;
-  } else {
-    media.innerHTML = `<img class="hero__img" src="${CLUB.hero.image||CLUB.hero.poster}" alt="" role="presentation" loading="eager">`;
-  }
-
-  const set = (id, txt) => { const e = document.getElementById(id); if (e) e.textContent = txt; };
-  set('hero-season',  `SEASON ${CLUB.season}`);
-  set('hero-ja',      CLUB.nameJa);
-  set('hero-tagline', CLUB.tagline);
-
+  // Club name
   const titleEl = document.getElementById('hero-title');
-  if (titleEl) {
-    const parts = CLUB.name.split(' ');
-    const last  = parts[parts.length - 1];
-    const main  = parts.slice(0, -1).join(' ');
-    titleEl.innerHTML = `<span class="hero__title-main">${main}</span><em class="hero__title-fc">${last}</em>`;
+  if (titleEl) titleEl.textContent = CLUB.name;
+
+  // Big watermark copy from config
+  const bgCopy = document.getElementById('hp-bg-copy');
+  if (bgCopy && CLUB.hero.posterCopy) {
+    bgCopy.innerHTML = CLUB.hero.posterCopy.map(l => `<span>${l}</span>`).join('');
   }
 
+  // Player image area — real cutout or gradient placeholder
+  const playerInner = document.getElementById('hero-player-inner');
+  if (playerInner) {
+    if (CLUB.hero.playerImage) {
+      playerInner.innerHTML = `<img class="hp-player__img" src="${CLUB.hero.playerImage}" alt="選手" loading="eager">`;
+    } else {
+      playerInner.innerHTML = `<div class="hp-player__ph"><p class="hp-player__ph-hint">PLAYER IMAGE</p></div>`;
+    }
+  }
+
+  // About text (lower section)
   const atEl = document.getElementById('about-text');
   if (atEl) atEl.textContent = `${CLUB.name}は${CLUB.established}年に創設。情熱とチームワークを信条に、地域に根ざしながら常にトップを目指す選手たちが揃っています。ピッチの上での勝利だけでなく、地域社会への貢献と次世代の育成を使命としています。`;
 
-  // Hero entrance — .hero__scroll uses translateX(-50%) for centering; animate opacity only
-  const els = document.querySelectorAll('.js-hi');
-  els.forEach((el, i) => {
-    const keepX = el.classList.contains('hero__scroll');
-    setTimeout(() => {
-      el.style.transition = 'opacity .85s ease, transform .85s ease';
-      el.style.opacity    = '1';
-      el.style.transform  = keepX ? 'translateX(-50%)' : 'translateY(0)';
-    }, 200 + i * 180);
+  // ── Animations ──
+
+  // 1. Watermark copy (instant fade-in)
+  requestAnimationFrame(() => {
+    if (bgCopy) bgCopy.classList.add('is-visible');
   });
-  setTimeout(() => { const r = document.getElementById('hero-rule'); if (r) r.classList.add('show'); }, 820);
+
+  // 2. Left panel .js-hi elements (staggered fade-up)
+  document.querySelectorAll('.hp-left .js-hi').forEach((el, i) => {
+    setTimeout(() => {
+      el.style.transition = 'opacity .75s ease, transform .75s ease';
+      el.style.opacity    = '1';
+      el.style.transform  = 'translateY(0)';
+    }, 180 + i * 150);
+  });
+
+  // 3. Player area slides in from right
+  setTimeout(() => {
+    const p = document.getElementById('hp-player');
+    if (p) p.classList.add('is-visible');
+  }, 280);
+
+  // 4. Diagonal red lines appear
+  setTimeout(() => {
+    const l = document.getElementById('hp-lines');
+    if (l) l.classList.add('is-visible');
+  }, 520);
+
+  // 5. CTA banner slides up
+  setTimeout(() => {
+    const c = document.getElementById('hp-cta');
+    if (c) c.classList.add('is-visible');
+  }, 900);
+
+  // 6. Scroll indicator
+  setTimeout(() => {
+    const s = document.querySelector('.hero__scroll--dark');
+    if (s) { s.style.transition = 'opacity .6s ease'; s.style.opacity = '1'; }
+  }, 1100);
 }
 
 /* ── 9. Next Match Banner ────────────────────────────────── */

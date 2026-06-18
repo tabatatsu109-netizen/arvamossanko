@@ -39,6 +39,11 @@ const CLUB = {
     video:  '',  // 例: 'assets/hero.mp4'
     poster: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=85',
     image:  'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=85',
+    // ─ ポスターヒーロー設定 ─
+    // 選手切り抜きPNG（透過推奨）。空の場合はグラデーションプレースホルダーを表示
+    playerImage: '',
+    // 左側に大きく表示するコピー文字（1行1要素）
+    posterCopy: ['BE', 'YOUR', 'FIRE'],
   },
 
   /* ─────────────────────────────────────

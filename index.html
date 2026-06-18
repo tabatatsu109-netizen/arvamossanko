@@ -14,25 +14,59 @@
 
   <div id="site-header"></div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="top">
-    <div class="hero__media" id="hero-media"></div>
-    <div class="hero__overlay" aria-hidden="true"></div>
-    <div class="hero__content">
-      <p  class="hero__season  js-hi" id="hero-season"></p>
-      <h1 class="hero__title   js-hi" id="hero-title"></h1>
-      <p  class="hero__ja      js-hi" id="hero-ja"></p>
-      <div class="hero__rule   js-hi" id="hero-rule" aria-hidden="true"></div>
-      <p  class="hero__tagline js-hi" id="hero-tagline"></p>
-      <div class="hero__btns   js-hi">
-        <a href="#news"     class="btn btn--red">LATEST NEWS</a>
-        <a href="#schedule" class="btn btn--ghost">SCHEDULE</a>
+  <!-- ===== HERO (POSTER DESIGN) ===== -->
+  <section class="hero hero--poster" id="top">
+
+    <!-- Fine grid -->
+    <div class="hp-grid" aria-hidden="true"></div>
+
+    <!-- Diagonal red lines -->
+    <div class="hp-lines" id="hp-lines" aria-hidden="true">
+      <div class="hp-line hp-line--1"></div>
+      <div class="hp-line hp-line--2"></div>
+      <div class="hp-line hp-line--3"></div>
+      <div class="hp-line hp-line--4"></div>
+    </div>
+
+    <!-- Giant watermark copy -->
+    <div class="hp-bg-copy" id="hp-bg-copy" aria-hidden="true">
+      <span>BE</span>
+      <span>YOUR</span>
+      <span>FIRE</span>
+    </div>
+
+    <!-- Layout -->
+    <div class="hp-body">
+      <div class="hp-left">
+        <p class="hp-season js-hi" id="hero-season"></p>
+        <h1 class="hp-club js-hi" id="hero-title"></h1>
+        <p class="hp-copy js-hi">We play with pride.<br>We fight for the badge.<br>Let's go beyond the limit.</p>
+        <div class="hp-btns js-hi">
+          <a href="#news"     class="btn btn--dark">LATEST NEWS</a>
+          <a href="#schedule" class="btn btn--outline-dark">SCHEDULE</a>
+        </div>
+      </div>
+      <!-- Player image (right) — JS populates #hero-player-inner -->
+      <div class="hp-player" id="hp-player">
+        <div class="hp-player__inner" id="hero-player-inner"></div>
       </div>
     </div>
-    <div class="hero__scroll js-hi" aria-hidden="true">
+
+    <!-- CTA Banner -->
+    <a href="contact.html" class="hp-cta" id="hp-cta">
+      <div class="hp-cta__tag">JOIN US!</div>
+      <div class="hp-cta__body">
+        <p class="hp-cta__ja">選手募集はこちら</p>
+        <span class="hp-cta__arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll hero__scroll--dark" aria-hidden="true">
       <span>SCROLL</span>
       <div class="hero__scroll-bar"></div>
     </div>
+
   </section>
 
   <!-- ===== NEXT MATCH BANNER ===== -->
