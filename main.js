@@ -218,13 +218,14 @@ function buildHero() {
   if (playerInner) {
     const imgs = CLUB.hero.playerImages || [];
     const [main, s1, s2, s3] = imgs;
+    const err = `onerror="this.parentElement.style.display='none'"`;
     if (main || s1 || s2) {
       playerInner.innerHTML = `
         <div class="hp-collage">
-          ${main ? `<div class="hp-collage__main"><img src="${main}" alt="選手" loading="eager"></div>` : ''}
-          ${s1   ? `<div class="hp-collage__s1"><img src="${s1}" alt="選手" loading="lazy"></div>`   : ''}
-          ${s2   ? `<div class="hp-collage__s2"><img src="${s2}" alt="選手" loading="lazy"></div>`   : ''}
-          ${s3   ? `<div class="hp-collage__s3"><img src="${s3}" alt="選手" loading="lazy"></div>`   : ''}
+          ${main ? `<div class="hp-collage__main"><img src="${main}" alt="選手" loading="eager" ${err}></div>` : ''}
+          ${s1   ? `<div class="hp-collage__s1"><img src="${s1}" alt="選手" loading="lazy" ${err}></div>`     : ''}
+          ${s2   ? `<div class="hp-collage__s2"><img src="${s2}" alt="選手" loading="lazy" ${err}></div>`     : ''}
+          ${s3   ? `<div class="hp-collage__s3"><img src="${s3}" alt="選手" loading="lazy" ${err}></div>`     : ''}
           <div class="hp-collage__overlay"></div>
         </div>`;
     } else {

@@ -42,16 +42,16 @@ const CLUB = {
     // 左側に大きく表示するコピー文字（1行1要素）
     posterCopy: ['BE', 'YOUR', 'FIRE'],
     // ─ 選手コラージュ画像（右側エリア）─
-    // 写真を images/players/ フォルダにコピーして下記ファイル名で保存してください
-    //   player-main.jpg … メイン大（ドリブル・疾走など動きのある1枚）
-    //   player-sub1.jpg … 左上サブ（個人アクション系）
-    //   player-sub2.jpg … 左下サブ（チーム・集合系）
-    //   player-sub3.jpg … 右上アクセント（省略したい場合は '' に）
+    // assets/image/player/ フォルダに写真を入れてください
+    //   main.jpg  … メイン（大・中央に配置）
+    //   sub1.jpg  … サブ左上（アクション系）
+    //   sub2.jpg  … サブ左下（チーム・集合系）
+    //   sub3.jpg  … 右上アクセント（不要なら '' に）
     playerImages: [
-      'images/players/player-main.jpg',
-      'images/players/player-sub1.jpg',
-      'images/players/player-sub2.jpg',
-      '',
+      'assets/image/player/main.jpg',
+      'assets/image/player/sub1.jpg',
+      'assets/image/player/sub2.jpg',
+      'assets/image/player/sub3.jpg',
     ],
   },
 

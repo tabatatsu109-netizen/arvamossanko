@@ -315,115 +315,119 @@ input, select, textarea { font: inherit; }
   position: relative;
   width: 100%;
   height: 100%;
-  background: #0a0a0a;
+  background: #080808;
   overflow: hidden;
 }
 
-/* Shared img style */
+/* Shared img */
 .hp-collage__main img,
 .hp-collage__s1 img,
 .hp-collage__s2 img,
 .hp-collage__s3 img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* ─ Main player (right 60%, diagonal left clip) ─ */
+/* ── MAIN: full height, diagonal left edge ── */
 .hp-collage__main {
   position: absolute;
   inset: 0;
-  left: 26%;
-  clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);
+  left: 28%;
+  /* diagonal cut from top-left of this element */
+  clip-path: polygon(13% 0%, 100% 0%, 100% 100%, 0% 100%);
   z-index: 1;
 }
 .hp-collage__main img {
   object-position: center top;
-  filter: contrast(1.2) brightness(.92) saturate(.85);
+  /* Natural but slightly processed */
+  filter: contrast(1.28) brightness(.88) saturate(.75);
 }
-
-/* ─ Sub 1 (top-left, diagonal right cut) ─ */
-.hp-collage__s1 {
-  position: absolute;
-  top: 0; left: 0;
-  width: 48%; height: 51%;
-  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
-  z-index: 2;
-}
-.hp-collage__s1 img {
-  object-position: center 20%;
-  filter: contrast(1.2) brightness(.85) saturate(.8);
-}
-/* thin separator line effect */
-.hp-collage__s1::after {
+/* Subtle red accent on main via overlay pseudo */
+.hp-collage__main::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent 90%, rgba(255,255,255,.08) 100%);
+  background:
+    linear-gradient(to left, transparent 40%, rgba(0,0,0,.55) 100%),
+    linear-gradient(to top,  color-mix(in srgb, var(--red) 22%, transparent) 0%, transparent 38%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* ─ Sub 2 (bottom-left, diagonal right cut reversed) ─ */
+/* ── SUB 1: top-left quadrant ── */
+.hp-collage__s1 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 44%; height: 50%;
+  /* diagonal right edge (top-right to bottom-right inset) */
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+  z-index: 2;
+}
+.hp-collage__s1 img {
+  object-position: center 25%;
+  /* more stylized – subdued, higher contrast */
+  filter: grayscale(.4) contrast(1.4) brightness(.72) saturate(.5);
+}
+
+/* ── SUB 2: bottom-left quadrant ── */
 .hp-collage__s2 {
   position: absolute;
   bottom: 0; left: 0;
-  width: 48%; height: 51%;
-  clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+  width: 44%; height: 50%;
+  clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
   z-index: 2;
 }
 .hp-collage__s2 img {
   object-position: center 30%;
-  filter: contrast(1.2) brightness(.85) saturate(.8);
-}
-.hp-collage__s2::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, transparent 90%, rgba(255,255,255,.08) 100%);
+  filter: grayscale(.4) contrast(1.4) brightness(.72) saturate(.5);
 }
 
-/* 1px horizontal divider between sub1/sub2 */
+/* Red 1px divider between sub1 and sub2 */
 .hp-collage__s1::before {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 1px;
-  background: rgba(255,255,255,.12);
-  z-index: 3;
+  height: 2px;
+  background: var(--red);
+  opacity: .7;
+  z-index: 4;
 }
 
-/* ─ Sub 3 (top-right accent, optional) ─ */
+/* ── SUB 3: bottom-right corner accent (optional) ── */
 .hp-collage__s3 {
   position: absolute;
-  top: 0; right: 0;
-  width: 32%; height: 34%;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 20% 100%);
+  bottom: 0; right: 0;
+  width: 28%; height: 30%;
+  clip-path: polygon(16% 0%, 100% 0%, 100% 100%, 0% 100%);
   z-index: 3;
 }
 .hp-collage__s3 img {
-  object-position: center top;
-  filter: contrast(1.15) brightness(.8) saturate(.75);
+  object-position: center 40%;
+  filter: grayscale(.6) contrast(1.3) brightness(.65) saturate(.35);
 }
 
-/* ─ Overlay: brand color blend + edge fades ─ */
+/* ── Global overlay: left dark fade + bottom red hint ── */
 .hp-collage__overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 30%, transparent 55%),
-    linear-gradient(to top,   color-mix(in srgb, var(--red) 18%, transparent) 0%, transparent 45%);
-  z-index: 5;
+    linear-gradient(to right,  rgba(0,0,0,.78) 0%, rgba(0,0,0,.3) 28%, transparent 52%),
+    linear-gradient(to top,    color-mix(in srgb, var(--red) 20%, transparent) 0%, transparent 40%),
+    linear-gradient(to bottom, rgba(0,0,0,.35) 0%, transparent 20%);
+  z-index: 6;
   pointer-events: none;
 }
 
-/* ── Mobile: stack collage vertically ── */
+/* ── Mobile: show only main, no clip ── */
 @media (max-width: 768px) {
-  .hp-collage__main { left: 0; clip-path: none; }
+  .hp-collage__main  { left: 0; clip-path: none; }
+  .hp-collage__main::after { display: none; }
   .hp-collage__s1,
   .hp-collage__s2,
-  .hp-collage__s3  { display: none; }
+  .hp-collage__s3    { display: none; }
   .hp-collage__overlay {
-    background: linear-gradient(to right, rgba(0,0,0,.5) 0%, transparent 70%);
+    background: linear-gradient(to right, rgba(0,0,0,.55) 0%, transparent 65%);
   }
 }
 
