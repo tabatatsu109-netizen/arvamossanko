@@ -213,11 +213,20 @@ function buildHero() {
     bgCopy.innerHTML = CLUB.hero.posterCopy.map(l => `<span>${l}</span>`).join('');
   }
 
-  // Player image area — real cutout or gradient placeholder
+  // Player image collage
   const playerInner = document.getElementById('hero-player-inner');
   if (playerInner) {
-    if (CLUB.hero.playerImage) {
-      playerInner.innerHTML = `<img class="hp-player__img" src="${CLUB.hero.playerImage}" alt="選手" loading="eager">`;
+    const imgs = CLUB.hero.playerImages || [];
+    const [main, s1, s2, s3] = imgs;
+    if (main || s1 || s2) {
+      playerInner.innerHTML = `
+        <div class="hp-collage">
+          ${main ? `<div class="hp-collage__main"><img src="${main}" alt="選手" loading="eager"></div>` : ''}
+          ${s1   ? `<div class="hp-collage__s1"><img src="${s1}" alt="選手" loading="lazy"></div>`   : ''}
+          ${s2   ? `<div class="hp-collage__s2"><img src="${s2}" alt="選手" loading="lazy"></div>`   : ''}
+          ${s3   ? `<div class="hp-collage__s3"><img src="${s3}" alt="選手" loading="lazy"></div>`   : ''}
+          <div class="hp-collage__overlay"></div>
+        </div>`;
     } else {
       playerInner.innerHTML = `<div class="hp-player__ph"><p class="hp-player__ph-hint">PLAYER IMAGE</p></div>`;
     }

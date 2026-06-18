@@ -39,11 +39,20 @@ const CLUB = {
     video:  '',  // 例: 'assets/hero.mp4'
     poster: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=85',
     image:  'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=85',
-    // ─ ポスターヒーロー設定 ─
-    // 選手切り抜きPNG（透過推奨）。空の場合はグラデーションプレースホルダーを表示
-    playerImage: '',
     // 左側に大きく表示するコピー文字（1行1要素）
     posterCopy: ['BE', 'YOUR', 'FIRE'],
+    // ─ 選手コラージュ画像（右側エリア）─
+    // 写真を images/players/ フォルダにコピーして下記ファイル名で保存してください
+    //   player-main.jpg … メイン大（ドリブル・疾走など動きのある1枚）
+    //   player-sub1.jpg … 左上サブ（個人アクション系）
+    //   player-sub2.jpg … 左下サブ（チーム・集合系）
+    //   player-sub3.jpg … 右上アクセント（省略したい場合は '' に）
+    playerImages: [
+      'images/players/player-main.jpg',
+      'images/players/player-sub1.jpg',
+      'images/players/player-sub2.jpg',
+      '',
+    ],
   },
 
   /* ─────────────────────────────────────

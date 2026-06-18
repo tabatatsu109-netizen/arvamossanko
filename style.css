@@ -302,12 +302,129 @@ input, select, textarea { font: inherit; }
   color: rgba(255,255,255,.25);
   white-space: nowrap;
 }
-/* Cutout player image */
+/* Single cutout player image (legacy) */
 .hp-player__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
+}
+
+/* ── Photo Collage ── */
+.hp-collage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+/* Shared img style */
+.hp-collage__main img,
+.hp-collage__s1 img,
+.hp-collage__s2 img,
+.hp-collage__s3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─ Main player (right 60%, diagonal left clip) ─ */
+.hp-collage__main {
+  position: absolute;
+  inset: 0;
+  left: 26%;
+  clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+.hp-collage__main img {
+  object-position: center top;
+  filter: contrast(1.2) brightness(.92) saturate(.85);
+}
+
+/* ─ Sub 1 (top-left, diagonal right cut) ─ */
+.hp-collage__s1 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 48%; height: 51%;
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+  z-index: 2;
+}
+.hp-collage__s1 img {
+  object-position: center 20%;
+  filter: contrast(1.2) brightness(.85) saturate(.8);
+}
+/* thin separator line effect */
+.hp-collage__s1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 90%, rgba(255,255,255,.08) 100%);
+}
+
+/* ─ Sub 2 (bottom-left, diagonal right cut reversed) ─ */
+.hp-collage__s2 {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 48%; height: 51%;
+  clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+.hp-collage__s2 img {
+  object-position: center 30%;
+  filter: contrast(1.2) brightness(.85) saturate(.8);
+}
+.hp-collage__s2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 90%, rgba(255,255,255,.08) 100%);
+}
+
+/* 1px horizontal divider between sub1/sub2 */
+.hp-collage__s1::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(255,255,255,.12);
+  z-index: 3;
+}
+
+/* ─ Sub 3 (top-right accent, optional) ─ */
+.hp-collage__s3 {
+  position: absolute;
+  top: 0; right: 0;
+  width: 32%; height: 34%;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 20% 100%);
+  z-index: 3;
+}
+.hp-collage__s3 img {
+  object-position: center top;
+  filter: contrast(1.15) brightness(.8) saturate(.75);
+}
+
+/* ─ Overlay: brand color blend + edge fades ─ */
+.hp-collage__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 30%, transparent 55%),
+    linear-gradient(to top,   color-mix(in srgb, var(--red) 18%, transparent) 0%, transparent 45%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ── Mobile: stack collage vertically ── */
+@media (max-width: 768px) {
+  .hp-collage__main { left: 0; clip-path: none; }
+  .hp-collage__s1,
+  .hp-collage__s2,
+  .hp-collage__s3  { display: none; }
+  .hp-collage__overlay {
+    background: linear-gradient(to right, rgba(0,0,0,.5) 0%, transparent 70%);
+  }
 }
 
 /* CTA Banner */
